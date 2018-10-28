@@ -11,5 +11,6 @@ service servicemanager /system/bin/servicemanager
     onrestart restart inputflinger
     onrestart restart drm
     onrestart restart cameraserver
-    writepid /dev/cpuset/system-background/tasks
+#    writepid /dev/cpuctl/bg_non_interactive/tasks
+#    writepid /dev/cpuset/system-background/tasks
     shutdown critical
