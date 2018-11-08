@@ -320,7 +320,7 @@ Vector< sp<EventThread::Connection> > EventThread::waitForEvent(
                 // use a (long) timeout when waiting for h/w vsync, and
                 // generate fake events when necessary.
                 bool softwareSync = mUseSoftwareVSync;
-                nsecs_t timeout = softwareSync ? ms2ns(16) : ms2ns(1000);
+                nsecs_t timeout = softwareSync ? ms2ns(16) : ms2ns(40);
                 if (mCondition.waitRelative(mLock, timeout) == TIMED_OUT) {
                     if (!softwareSync) {
                         ALOGW("Timed out waiting for hw vsync; faking it");
